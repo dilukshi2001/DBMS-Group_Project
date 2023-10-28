@@ -21,3 +21,8 @@ I.S.Palangasingha       TG/2021/1051
 G.K.H.M.Kapuge          TG/2021/1032
 
 
+SRS DOCUMENT
+
+[DBMS-SRS Doc.docx](https://github.com/dilukshi2001/DBMS-Group_Project/files/13194614/DBMS-SRS.Doc.docx)
+
+
