@@ -1,3 +1,27 @@
+CREATE USER 'Admin'@'localhost' 
+IDENTIFIED BY '1234';
+GRANT ALL PRIVILEGES ON DBMS_G11.* TO 'Admin'@'localhost'
+WITH GRANT OPTION;
+
+CREATE USER 'Dean'@'localhost' 
+IDENTIFIED BY '1234';
+GRANT ALL PRIVILEGES ON DBMS_G11.* TO 'Dean'@'localhost';
+
+CREATE USER 'Lecturer'@'localhost' 
+IDENTIFIED BY '1234';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, REFERENCES, INDEX, ALTER, CREATE VIEW, EVENT, TRIGGER, SHOW VIEW, EXECUTE, ALTER ROUTINE,
+CREATE ROUTINE ON DBMS_G11.* TO 'Lecturer'@'localhost';
+
+CREATE USER 'TechOfficer'@'localhost' 
+IDENTIFIED BY  '1234';
+GRANT SELECT, INSERT, UPDATE ON DBMS_G11.attendance TO 'Technical officer'@'localhost';
+
+CREATE USER 'student'@'localhost' 
+IDENTIFIED BY  '1234';
+GRANT SELECT ON DBMS_G11. TO 'Student'@'localhost';
+
+FLUSH PRIVILEGES;
+
 CREATE TABLE attendance
 (
 TG_number varchar(15),
