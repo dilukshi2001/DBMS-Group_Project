@@ -578,7 +578,7 @@ CREATE VIEW ICT1242 AS
 CREATE VIEW ICT12122 AS 
      SELECT TG_number AS 'TG_number' , SUM(theory) AS 'tot_theory' , SUM(practical) AS 'tot_practical' , SUM(total) AS 'both',SUM((total/52)*100) AS 'percentage' 
      FROM attendance
-     WHERE c_code='ICT12122 '
+     WHERE c_code='ICT1222 '
      GROUP BY TG_number;
 
 
