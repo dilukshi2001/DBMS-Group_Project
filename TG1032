@@ -227,3 +227,54 @@ VALUES
 ('TG/2021/1124','ICT1253',11,2,2,'present',4),
 ('TG/2021/1124','ICT1253',12,2,2,'present',4),
 ('TG/2021/1124','ICT1253',13,2,2,'present',4);
+
+CREATE VIEW ICT1212 AS
+     SELECT TG_number AS 'TG_number' , SUM(theory) AS 'tot_theory' , SUM(practical) AS 'tot_practical' , SUM(total) AS 'both',SUM((total/26)*100) AS 'percentage' 
+     FROM attendance
+     WHERE c_code='ICT1212'
+     GROUP BY TG_number;
+
+
+
+CREATE VIEW ICT1222 AS
+     SELECT TG_number AS 'TG_number' , SUM(theory) AS 'tot_theory' , SUM(practical) AS 'tot_practical' , SUM(total) AS 'both',SUM((total/52)*100) AS 'percentage' 
+     FROM attendance
+     WHERE c_code='ICT1222'
+     GROUP BY TG_number;
+
+
+CREATE VIEW ICT1253 AS
+     SELECT TG_number AS 'TG_number' , SUM(theory) AS 'tot_theory' , SUM(practical) AS 'tot_practical' , SUM(total) AS 'both',SUM((total/52)*100) AS 'percentage' 
+     FROM attendance
+     WHERE c_code='ICT1253'
+     GROUP BY TG_number;
+
+CREATE VIEW ICT1242 AS
+     SELECT TG_number AS 'TG_number' , SUM(theory) AS 'tot_theory' , SUM(practical) AS 'tot_practical' , SUM(total) AS 'both',SUM((total/26)*100) AS 'percentage' 
+     FROM attendance
+     WHERE c_code='ICT1242'
+     GROUP BY TG_number;
+
+CREATE VIEW ICT1233 AS
+     SELECT TG_number AS 'TG_number' , SUM(theory) AS 'tot_theory' , SUM(practical) AS 'tot_practical' , SUM(total) AS 'both',SUM((total/52)*100) AS 'percentage' 
+     FROM attendance
+     WHERE c_code='ICT1233'
+     GROUP BY TG_number;
+
+CREATE VIEW TCS1212 AS
+     SELECT TG_number AS 'TG_number' , SUM(theory) AS 'tot_theory' , SUM(practical) AS 'tot_practical' , SUM(total) AS 'both',SUM((total/26)*100) AS 'percentage' 
+     FROM attendance
+     WHERE c_code='TCS1212'
+     GROUP BY TG_number;
+
+CREATE VIEW ENG1212 AS
+     SELECT TG_number AS 'TG_number' , SUM(theory) AS 'tot_theory' , SUM(practical) AS 'tot_practical' , SUM(total) AS 'both',SUM((total/26)*100) AS 'percentage' 
+     FROM attendance
+     WHERE c_code='ENG1212'
+     GROUP BY TG_number;
+
+CREATE VIEW TMS1233 AS
+     SELECT TG_number AS 'TG_number' , SUM(theory) AS 'tot_theory' , SUM(practical) AS 'tot_practical' , SUM(total) AS 'both',SUM((total/39)*100) AS 'percentage' 
+     FROM attendance
+     WHERE c_code='TMS1233'
+     GROUP BY TG_number;
