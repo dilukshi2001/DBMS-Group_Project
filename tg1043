@@ -244,7 +244,7 @@ quiz DECIMAL,
 mid DECIMAL,
 total DECIMAL,
 status VARCHAR (7),
-FOREIGN KEY(TG_num) REFERENCES student(TG_num),
+FOREIGN KEY(TG_number) REFERENCES student(TG_number),
 FOREIGN KEY(c_code) REFERENCES course(c_code)
 );
 
