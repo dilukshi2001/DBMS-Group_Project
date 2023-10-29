@@ -1,0 +1,542 @@
+CREATE DATABASE group11;
+
+USE group11;
+
+
+CREATE TABLE student
+(
+TG_number VARCHAR(15) PRIMARY KEY,
+sur_name VARCHAR(20),
+lastName VARCHAR(20),
+Address VARCHAR(100),
+Email varchar(100),
+status VARCHAR(10),
+dob DATE,
+gender VARCHAR(10),
+d_id char(3),
+mentor CHAR(6)
+
+);
+
+
+
+INSERT INTO student
+VALUES
+('TG/2021/1179','D.M.P.S.','Wasana','149,Matara','dinithi2001@gmail.com', 'proper', '2001-04-25','Female','ICT','ICT001'),
+('TG/2021/1034', 'H.D.N.', 'Kapuge', '89/2,Colombo', 'hiruna53@gmail.com', 'proper', '2000-04-02','Male','ICT','ICT003' ),
+('TG/2021/1036', 'P.L.', 'Ediriweera', '432,Kandy', 'ediriweera33@gmail.com', 'proper','1999-09-11','Male','ICT','ICT002'),
+('TG/2021/1141', 'N.D.K.', 'Hettiarachchi', '23/2,Galle', 'nelkadilrukshi98@gmail.com',	 'proper', '2001-09-13','Female','ICT','ICT001'),
+('TG/2021/1047', 'R.H.', 'Jayakodi','98/1,Kegalle','pasindujaya0425@gmail.com',	 'proper', '2001-11-10', 'Male','ICT','ICT004'),
+('TG/2021/1051', 'U.G.K', 'Dilshan', '189,Jaffna', 'kavishkadilshan@gmail.com',	 'proper', '2001-05-02', 'Male','ICT','ICT003' ),
+('TG/2021/1080', 'E.A.P.G', 'Wijethunga', '432/1,Trincomalee','gimhani1011@gmail.com','proper',	'2000-11-25', 'Female','ICT','ICT002'),
+('TG/2021/1176', 'W.P.M.A', 'Weerasinghe', '110,Batticaloa', 'maleei925@gmail.com', 'proper','2001-10-31', 'Female','ICT','ICT001'),
+('TG/2021/1024', 'G.H.K.', 'Malkirana',	'98/1,Badulla',	'gayanhasintha@gmail.com', 'proper', '2002-01-05', 'Male','ICT','ICT002'),
+('TG/2021/1013', 'I.S.', 'Sathsarani', '191,Mannar', 'imana784@gmail.com','proper','2001-07-14','Female','ICT','ICT004'),
+('TG/2020/657',	 'U.P.D', 'Silva', '543,Tangalle', 'poornima2000@gmail.com', 'Repeat', '2000-05-02','Female','ICT','ICT003' ),
+('TG/2020/456',	 'H.A.H.', 'Tharaka', '987/2,Colombo',	 'amishatharaka8silva@gmail.com','Repeat', '1998-12-30','Male',	'ICT','ICT002'),
+('TG/2020/786',	 'C.M.', 'Ruupasinghe',	'123,Rathnapura', 'chanaka54@gmail.com', 'Repeat', '2000-09-14', 'Male','ICT','ICT004'),
+('TG/2020/789',	 'J.L',	 'Aksha', '345/1,Kaluthara','jlaksha98@gmail.com','Repeat', '1999-02-27','Female', 'ICT','ICT001'),
+('TG/2020/345',	 'O.H.P', 'Bandara', '23/5,Rathnapura',	 'hesarabandara55@gmail.com', 'Repeat',	'2000-07-28', 'Male','ICT','ICT003' ),
+('TG/2017/871',	 'D.M.H.P', 'Dissanayaka', '34/2,Anuradhapura',	 'hirushapraboth@gmail.com','Suspend','1997-04-29', 'Male','ICT','ICT002'),
+('TG/2018/567',	 'A.K.S', 'Liyanage', '902,Matara', 'asithakapuge18@gmail.com',	 'Suspend','1996-10-27','Male',	'ICT','ICT001'),
+('TG/2017/856',	 'M.B.D.G', 'Nisthar', '45,Gampaha', 'minhath34@gmail.com','Suspend','1998-08-16', 'Male','ICT','ICT004');
+
+
+
+
+
+CREATE TABLE student_contact
+(
+TG_number VARCHAR(15),
+contact CHAR(11),
+FOREIGN KEY(TG_number) REFERENCES student(TG_number)
+);
+
+
+INSERT INTO student_contact
+VALUES
+('TG/2021/1179',071-1234498),
+('TG/2021/1034',071-2343234),
+('TG/2021/1034',078-5153899),
+('TG/2021/1036',076-2345123),
+('TG/2021/1141',071-2345987),
+('TG/2021/1047',072-1267563),
+('TG/2021/1051',078-1098765),
+('TG/2021/1080',076-1123402),
+('TG/2021/1176',076-3456710),
+('TG/2021/1176',078-1919234),
+('TG/2021/1024',075-9876230),
+('TG/2021/1013',071-1234498),
+('TG/2020/657',072-1071234),
+('TG/2020/456',075-5158778),
+('TG/2020/786',076-7635298),
+('TG/2020/789',072-2567512),
+('TG/2020/789',078-6556675),
+('TG/2020/345',076-2712762),
+('TG/2017/871',078-0978712),
+('TG/2018/567',071-1123433),
+('TG/2017/856',075-9988765);
+
+​ 
+
+
+CREATE TABLE course 
+(
+c_code CHAR(8) PRIMARY KEY,
+c_name VARCHAR(100),
+c_credit INT,
+c_type VARCHAR(15),
+status CHAR(1),
+admin_id varchar(10),
+l_id CHAR(6),
+d_id CHAR (3)
+
+);
+​ 
+
+​INSERT INTO course
+VALUES
+('ICT1212','DBMS',2,'theory','c','admin01','ICT001','ICT'),
+('ICT1222','DBMS',2,'practical','c','admin01','ICT001','ICT'),
+('ICT1253','Network',3,'both','c','admin01','ICT002','ICT'),
+('ICT1242','Architecture',3,'theory','c','admin01','ICT003','ICT'),
+('ICT1233','Web Development',2,'both','c','admin01','ICT004','ICT'),
+('TCS1212','Management',2,'theory','c','admin01','TCS007','MUL'),
+('ENG1212','English',2,'theory','s','admin01','ENG006','MUL'),
+('TMS1233','Mathamatics',3,'theory','c','admin01','TMS005','MUL');
+
+
+
+
+CREATE TABLE user
+(
+u_id varchar(10) PRIMARY KEY,
+Nic CHAR(12),
+email VARCHAR(100),
+fname VARCHAR(50),
+lname VARCHAR(50),
+contact CHAR(11),
+gender VARCHAR(7),
+role VARCHAR(7)
+);
+
+
+INSERT INTO user
+VALUES
+('d001','19631234786v','subash@ictec.ruh.ac.lk','Subash','Jayasinghe','071-1232457','Male','Dean'),
+('admin01','19792987654v','sameera@fot.ruh.lk','Sameera', 'Jagathpriya','078-9878678','Male','Admin'),
+('to01','19876785654v','vishwa@fot.ruh.lk','Vishwa','Kodikara','072-1123234','Male','TO'),
+('to02','19926754657v','akalanka@fot.ruh.lk', 'Akalanka','Bandara','071-5676543','Male','TO'),
+('to03','19942676541v','jagath.@fot.ruh.lk','Jagath','Dewapriya','076-0909908', 'Male','TO');
+
+
+
+CREATE TABLE lecturer
+(
+l_id CHAR(6) PRIMARY KEY,
+l_name varchar(100)
+);
+
+
+INSERT INTO lecturer
+VALUES
+('ICT001','P.H.P.Nuwan Laksiri'),
+('ICT002','Chanduni Gamage'),
+('ICT003','Nimesha Manage'),
+('ICT004','H.Rumeshika'),
+('TMS005','S.P.Harshana'),
+('ENG006','N.Herath'),
+('TCS007','N.Chathuranga');
+
+
+
+
+CREATE TABLE department
+(
+d_id CHAR(3) PRIMARY KEY,
+name VARCHAR(100),
+degree VARCHAR(100)
+);
+
+INSERT INTO department
+VALUES	
+('ICT','Information & communication technology','BICT Hons Information and Communication Technology'),	
+('BST','Engineering technology','BET Hons Engineering Technology'),	
+('ET','Bio systems technology','BBST Hons Bio Systems Technology'),	
+('MUL','Multidiciplinary',NULL);
+
+
+
+CREATE TABLE lecturer_department
+(
+l_id CHAR(6),
+d_id CHAR(3),
+FOREIGN KEY(l_id)REFERENCES lecturer(l_id),
+FOREIGN KEY(d_id) REFERENCES department(d_id)
+);
+
+
+INSERT INTO lecturer_department
+VALUES	
+('ICT001','ICT'),
+('ICT002','ICT'),
+('ICT003','ICT'),
+('ICT004','ICT'),
+('TMS005','MUL'),
+('ENG006','MUL'),
+('TCS007','MUL'); 
+
+
+CREATE TABLE lecturer_course
+(
+l_id CHAR(6),
+c_code CHAR(8),
+FOREIGN KEY(l_id) REFERENCES lecturer(l_id),
+FOREIGN KEY(c_code) REFERENCES course(c_code)
+);
+
+
+INSERT INTO lecturer_course
+VALUES
+('ICT001','ICT1212'),
+('ICT002','ICT1253'),
+('ICT003','ICT1242'),
+('ICT004','ICT1233'),
+('TMS005','TMS1233'),
+('ENG006','ENG1212'),
+('TCS007','TCS1212');
+
+
+
+CREATE TABLE grade
+(
+value VARCHAR(2) PRIMARY KEY,
+GPA DECIMAL,
+min DECIMAL,
+max DECIMAL
+);
+
+
+INSERT INTO grade
+VALUES
+('A+',4,85.00,100.00),
+('A',4,70.00,84.00),
+('A-',3.7,65.00,69.00),
+('B+',3.3,60.00,64.00),
+('B',3,	55.00,59.00),
+('B-',2.7,50.00,54.00),
+('C+',2.3,45.00,49.00),
+('C',2,	40.00,44.00),
+('C-',1.7,35.00,39.00),
+('D+',1.3,30.00,34.00),
+('D',1,	25.00,29.00),
+('WH',NULL,NULL,NULL),
+('MC',NULL,NUll,NULL);
+
+
+
+CREATE TABLE CA
+(
+TG_number VARCHAR(15),
+c_code CHAR(7),
+assignment DECIMAL,
+quiz DECIMAL,
+mid DECIMAL,
+total DECIMAL,
+status VARCHAR (7),
+FOREIGN KEY(TG_num) REFERENCES student(TG_num),
+FOREIGN KEY(c_code) REFERENCES course(c_code)
+);
+
+
+INSERT INTO CA
+VALUES
+ ('TG/2021/1179','ICT1212',15,14,7,36,'pass'),
+ ('TG/2021/1179','ICT1222',8.5,5,9,22.5,'pass'),
+ ('TG/2021/1179','ICT1253',6,6,8,20,'pass'),
+ ('TG/2021/1179','ICT1242',9.5,15,6,30.5,'pass'),
+ ('TG/2021/1179','ICT1233',7.5,13,9,29.5,'pass'),
+ ('TG/2021/1179','TCS1212',9,18,10,37,'pass'),
+ ('TG/2021/1179','ENG1212',8,19,5,32,'pass'),
+ ('TG/2021/1179','TMS1233',7,9,6,22,'pass'),
+ ('TG/2021/1034','ICT1212',6,16,7,29,'pass'),
+ ('TG/2021/1034','ICT1222',5.5,18,8,31.5,'pass'),
+ ('TG/2021/1034','ICT1253',9.5,12,10,31.5,'pass'),
+ ('TG/2021/1034','ICT1242',8,11,9,28,'pass'),
+ ('TG/2021/1034','ICT1233',8,8,10,26,'pass'),
+ ('TG/2021/1034','TCS1212',8.5,17,8,33.5,'pass'),
+ ('TG/2021/1034','ENG1212',7.5,12,6,25.5,'pass'),
+ ('TG/2021/1034','TMS1233',6.5,	0,10,16.5,'fail'),
+ ('TG/2021/1036','ICT1212',6,19,9,34,'pass'),
+ ('TG/2021/1036','ICT1222',7,16,7,30,'pass'),
+ ('TG/2021/1036','ICT1253',5,18,8,31,'pass'),
+ ('TG/2021/1036','ICT1242',7,12,9,28,'pass'),
+ ('TG/2021/1036','ICT1233',9,9,	5,23,'pass'),
+ ('TG/2021/1036','TCS1212',9.5,14,4,27.5,'pass'),
+ ('TG/2021/1036','ENG1212',4.5,18,10,32.5,'pass'),
+ ('TG/2021/1036','TMS1233',5,15,9,29,'pass'),
+ ('TG/2021/1141','ICT1212',7,19,8,34,'pass'),
+ ('TG/2021/1141','ICT1222',8,18,10,36,'pass'),
+ ('TG/2021/1141','ICT1253',9,12,6,27,'pass'),
+ ('TG/2021/1141','ICT1242',6,15,8,29,'pass'),
+ ('TG/2021/1141','ICT1233',7,8,10,25,'pass'),
+ ('TG/2021/1141','TCS1212',5,7.5,9,21.5,'pass'),
+ ('TG/2021/1141','ENG1212',5.5,17.5,8,31,'pass'),
+ ('TG/2021/1141','TMS1233',8.5,	12,7,27.5,'pass'),
+('TG/2021/1047','ICT1212',7,13.5,8,28.5,'pass'),
+('TG/2021/1047','ICT1222',9,19,7,35,'pass'),
+('TG/2021/1047','ICT1253',9,16.5,9,34.5,'pass'),
+('TG/2021/1047','ICT1242',6,9.5,10,25.5,'pass'),
+('TG/2021/1047','ICT1233',9,15,7,31,'pass'),
+('TG/2021/1047','TCS1212',7,7.5,6,20.5,'pass'),
+('TG/2021/1047','ENG1212',8,6,5,19,'pass'),
+('TG/2021/1047','TMS1233',9,16,10,35,'pass'),
+('TG/2021/1051','ICT1212',10,18,9,37,'pass'),
+('TG/2021/1051','ICT1222',7,12,8,27,'pass'),
+('TG/2021/1051','ICT1253',9,10,10,29,'pass'),
+('TG/2021/1051','ICT1242',8,16,10,34,'pass'),
+('TG/2021/1051','ICT1233',5.5,13.5,7,26,'pass'),
+('TG/2021/1051','TCS1212',6.5,5.5,8,20,'pass'),
+('TG/2021/1051','ENG1212',9,12.5,0,21.5,'pass'),
+('TG/2021/1051','TMS1233',7.5,16.5,5,29,'pass'),
+('TG/2021/1080','ICT1212',8,12.5,10,30.5,'pass'),
+('TG/2021/1080','ICT1222',6,13.5,6,25.5,'pass'),
+('TG/2021/1080','ICT1253',9.5,12,7,28.5,'pass'),
+('TG/2021/1080','ICT1242',10,9,8,27,'pass'),
+('TG/2021/1080','ICT1233',0,18,9,27,'pass'),
+('TG/2021/1080','TCS1212',6,7,10,23,'pass'),
+('TG/2021/1080','ENG1212',8,15,8,31,'pass'),
+('TG/2021/1080','TMS1233',9,15,9,33,'pass'),
+('TG/2021/1176','ICT1212',9.5,16,10,35.5,'pass'),
+('TG/2021/1176','ICT1222',7.5,15,5,27.5,'pass'),
+('TG/2021/1176','ICT1253',8,17,6,31,'pass'),
+('TG/2021/1176','ICT1242',9,17.5,7,33.5,'pass'),
+('TG/2021/1176','ICT1233',8,18,8,34,'pass'),
+('TG/2021/1176','TCS1212',9,17.5,8,34.5,'pass'),
+('TG/2021/1176','ENG1212',8,18,8,34,'pass'),
+('TG/2021/1176','TMS1233',9,12,9,30,'pass'),
+('TG/2021/1024','ICT1212',8,13,10,31,'pass'),
+('TG/2021/1024','ICT1222',7,9,5,21,'pass'),
+('TG/2021/1024','ICT1253',5,8,6,19,'pass'),
+('TG/2021/1024','ICT1242',5.5,17,8,30.5,'pass'),
+('TG/2021/1024','ICT1233',7,16,7,30,'pass'),
+('TG/2021/1024','TCS1212',7.5,18,10,35.5,'pass'),
+('TG/2021/1024','ENG1212',8.5,19,6,33.5,'pass'),
+('TG/2021/1024','TMS1233',10,17.5,8,35.5,'pass'),
+('TG/2021/1013','ICT1212',7,14.5,9,30.5,'pass'),
+('TG/2021/1013','ICT1222',6,12.5,10,28.5,'pass'),
+('TG/2021/1013','ICT1253',8,12,6,26,'pass'),
+('TG/2021/1013','ICT1242',9,16,7,32,'pass'),
+('TG/2021/1013','ICT1233',8,15,9,32,'pass'),
+('TG/2021/1013','TCS1212',9,14,9,32,'pass'),
+('TG/2021/1013','ENG1212',8,15,9,32,'pass'),
+('TG/2021/1013','TMS1233',7,14,8,29,'pass'),
+('TG/2020/657','ICT1212',6,19,6,31,'pass'),
+('TG/2020/657','ICT1222',5,17,7,29,'pass'),
+('TG/2020/657','ICT1253',7.5,15,10,32.5,'pass'),
+('TG/2020/657','ICT1242',8.5,12,9,29.5,'pass'),
+('TG/2020/657','ICT1233',7,13.5,8,28.5,'pass'),
+('TG/2020/657','TCS1212',8,16,9,33,'pass'),
+('TG/2020/657','ENG1212',9,14.5,7,30.5,'pass'),
+('TG/2020/657','TMS1233',7,19,8,34,'pass'),
+('TG/2020/456','ICT1212',6,15,8,29,'pass'),
+('TG/2020/456','ICT1222',9,14,8,31,'pass'),
+('TG/2020/456','ICT1253',7,13,10,30,'pass'),
+('TG/2020/456','ICT1242',8,16,9,33,'pass'),
+('TG/2020/456','ICT1233',5.5,14,9,28.5,'pass'),
+('TG/2020/456','TCS1212',6,12,10,26,'pass'),
+('TG/2020/456','ENG1212',9,13,7,29,'pass'),
+('TG/2020/456','TMS1233',9.5,13.5,8,31,'pass'),
+('TG/2020/786','ICT1212',6.5,13,8,27.5,'pass'),
+('TG/2020/786','ICT1222',8,18.5,9,35.5,'pass'),
+('TG/2020/786','ICT1253',9,15.5,10,34.5,'pass'),
+('TG/2020/786','ICT1242',9.5,12,9,30.5,'pass'),
+('TG/2020/786','ICT1233',7,9,9,25,'pass'),
+('TG/2020/786','TCS1212',7,8,7,22,'pass'),
+('TG/2020/786','ENG1212',9,10,6,25,'pass'),
+('TG/2020/786','TMS1233',9,10.5,5,24.5,'pass'),
+('TG/2020/789','ICT1212',9,5,7,	21,'pass'),
+('TG/2020/789','ICT1222',9,10.5,8,27.5,'pass'),
+('TG/2020/789','ICT1253',8,16,10,34,'pass'),
+('TG/2020/789','ICT1242',7.5,12,9,28.5,'pass'),
+('TG/2020/789','ICT1233',6,11.5,8,25.5,'pass'),
+('TG/2020/789','TCS1212',7,6,5,	18,'Fail'),
+('TG/2020/789','ENG1212',9,19,8,36,'pass'),
+('TG/2020/789','TMS1233',8,13,7,28,'pass'),
+('TG/2020/345','ICT1212',7,16.5,6,29.5,'pass'),
+('TG/2020/345','ICT1222',7,11,5,23,'pass'),
+('TG/2020/345','ICT1253',9,10,10,29,'pass'),
+('TG/2020/345','ICT1242',9,0,6,	15,'medical'),
+('TG/2020/345','ICT1233',6,8.5,9,23.5,'pass'),
+('TG/2020/345','TCS1212',8,13,8,29,'pass'),
+('TG/2020/345','ENG1212',5.5,18,7,30.5,'pass'),
+('TG/2020/345','TMS1233',0,19,6,25,'pass');
+
+
+​ 
+​ 
+CREATE TABLE final_mark
+(
+TG_number varchar(15),
+c_code char(8),
+final decimal,
+ca decimal,
+total decimal,
+grade varchar(2),
+FOREIGN KEY(TG_number) REFERENCES student(TG_number),
+FOREIGN KEY(c_code) REFERENCES course(c_code),
+FOREIGN KEY(grade) REFERENCES grade(value)
+);
+​ 
+
+INSERT INTO final_mark
+VALUES
+ ('TG/2021/1179','ICT1212',40,36,76,'A'),
+ ('TG/2021/1179','ICT1222',20, 22.5 , 42.5 ,'C'),
+ ('TG/2021/1179','ICT1253',15,20,35,'C-'),
+ ('TG/2021/1179','ICT1242',10,30.5,40.5,'C'),
+ ('TG/2021/1179','ICT1233',19,29.5,48.5,'C+'),
+ ('TG/2021/1179','TCS1212',24,37,61,'B+'),
+ ('TG/2021/1179','ENG1212',36,32,68,'A-'),
+ ('TG/2021/1179','TMS1233',47,22,69,'A-'),
+ ('TG/2021/1034','ICT1212',12,29,41,'C'),
+ ('TG/2021/1034','ICT1222',9,31.5,40.5,'C'),
+ ('TG/2021/1034','ICT1253',27,31.5,58.5,'B'),
+ ('TG/2021/1034','ICT1242',48,28,76,'A'),
+ ('TG/2021/1034','ICT1233',29,26,55,'B'),
+ ('TG/2021/1034','TCS1212',56,33.5,89.5,'A+'),
+ ('TG/2021/1034','ENG1212',27,25.5,52.5,'B-'),
+ ('TG/2021/1034','TMS1233',NULL,NULL,NULL,NULL),
+ ('TG/2021/1036','ICT1212',32,34,66,'A-'),
+ ('TG/2021/1036','ICT1222',22,30,52,'B-'),
+ ('TG/2021/1036','ICT1253',46,31,77,'A'),
+ ('TG/2021/1036','ICT1242',50,28,78,'A'),
+ ('TG/2021/1036','ICT1233',25,23,48,'C+'),
+ ('TG/2021/1036','TCS1212',17,27.5,44.5,'C+'),
+ ('TG/2021/1036','ENG1212',33,32.5,65.5,'A-'),
+ ('TG/2021/1036','TMS1233',45,29,74,'A'),
+ ('TG/2021/1141','ICT1212',33,34,67,'A-'),
+ ('TG/2021/1141','ICT1222',15,36,51,'B-'),
+ ('TG/2021/1141','ICT1253',28,27,55,'B'),
+ ('TG/2021/1141','ICT1242',16,29,45,'C+'),
+ ('TG/2021/1141','ICT1233',26,25,51,'B-'),
+ ('TG/2021/1141','TCS1212',47,21.5,68.5,'A-'),
+ ('TG/2021/1141','ENG1212',35,31,66,'A-'),
+ ('TG/2021/1141','TMS1233',20,27.5,47.5,'C+'),
+ ('TG/2021/1047','ICT1212',43,28.5,71.5,'A'),
+ ('TG/2021/1047','ICT1222',23,35,58,'B'),
+ ('TG/2021/1047','ICT1253',58,34.5,92.5,'A+'),
+ ('TG/2021/1047','ICT1242',14,25.5,39.5,'C'),
+ ('TG/2021/1047','ICT1233',38,31,69,'A-'),
+( 'TG/2021/1047','TCS1212',48,20.5,68.5,'A-'),
+( 'TG/2021/1047','ENG1212',40,19,59,'B'),
+( 'TG/2021/1047','TMS1233',50,35,85,'A+'),
+( 'TG/2021/1051','ICT1212',57,37,94,'A+'),
+( 'TG/2021/1051','ICT1222',18,27,45,'C+'),
+( 'TG/2021/1051','ICT1253',23,29,52,'B-'),
+( 'TG/2021/1051','ICT1242',25,34,59,'B'),
+( 'TG/2021/1051','ICT1233',38,26,64,'B+'),
+( 'TG/2021/1051','TCS1212',48,20,68,'A-'),
+( 'TG/2021/1051','ENG1212',50,21.5,71.5,'A'),
+( 'TG/2021/1051','TMS1233',43,29,72,'A'),
+( 'TG/2021/1080','ICT1212',26,30.5,56.5,'B'),
+( 'TG/2021/1080','ICT1222',36,25.5,61.5,'B+'),
+( 'TG/2021/1080','ICT1253',35,28.5,63.5,'B+'),
+( 'TG/2021/1080','ICT1242',37,27,64,'B+'),
+( 'TG/2021/1080','ICT1233',23,27,50,'B-'),
+( 'TG/2021/1080','TCS1212',25,23,48,'C+'),
+( 'TG/2021/1080','ENG1212',15,31,46,'C+'),
+( 'TG/2021/1080','TMS1233',46,33,79,'A'),
+( 'TG/2021/1176','ICT1212',28,35.5,63.5,'B+'),
+( 'TG/2021/1176','ICT1222',30,27.5,57.5,'B'),
+( 'TG/2021/1176','ICT1253',33,31,64,'B+'),
+( 'TG/2021/1176','ICT1242',26,33.5,59.5,'B+'),
+( 'TG/2021/1176','ICT1233',27,34,61,'B+'),
+( 'TG/2021/1176','TCS1212',37,34.5,71.5,'A'),
+( 'TG/2021/1176','ENG1212',47,34,81,'A'),
+( 'TG/2021/1176','TMS1233',56,30,86,'A+'),
+( 'TG/2021/1024','ICT1212',55,31,86,'A+'),
+( 'TG/2021/1024','ICT1222',27,21,48,'C+'),
+( 'TG/2021/1024','ICT1253',36,19,55,'B'),
+( 'TG/2021/1024','ICT1242',45,30.5,75.5,'A'),
+( 'TG/2021/1024','ICT1233',48,30,78,'A'),
+( 'TG/2021/1024','TCS1212',36,35.5,71.5,'A'),
+( 'TG/2021/1024','ENG1212',27,33.5,60.5,'B+'),
+( 'TG/2021/1024','TMS1233',39,35.5,74.5,'A'),
+ ('TG/2021/1013','ICT1212',42,30.5,72.5,'A'),
+ ('TG/2021/1013','ICT1222',48,28.5,76.5,'A'),
+ ('TG/2021/1013','ICT1253',37,26,63,'B+'),
+ ('TG/2021/1013','ICT1242',58,32,90,'A+'),
+ ('TG/2021/1013','ICT1233',33,32,65,'A-'),
+ ('TG/2021/1013','TCS1212',47,32,79,'A'),
+ ('TG/2021/1013','ENG1212',56,32,88,'A+'),
+ ('TG/2021/1013','TMS1233',34,29,63,'B+'),
+( 'TG/2020/657','ICT1212',53,31,84,'C'),
+( 'TG/2020/657','ICT1222',42,29,71,'C'),
+( 'TG/2020/657','ICT1253',18,32.5,50.5,'C'),
+( 'TG/2020/657','ICT1242',48,29.5,77.5,'C'),
+( 'TG/2020/657','ICT1233',37,28.5,65.5,'C'),
+( 'TG/2020/657','TCS1212',48,33,81,'C'),
+( 'TG/2020/657','ENG1212',38,30.5,68.5,'C'),
+( 'TG/2020/657','TMS1233',47,34,81,'C'),
+('TG/2020/456','ICT1212',55,29,84,'C'),
+('TG/2020/456','ICT1222',25,31,56,'C'),
+('TG/2020/456','ICT1253',33,30,63,'C'),
+('TG/2020/456','ICT1242',48,33,81,'C'),
+('TG/2020/456','ICT1233',53,28.5,81.5,'C'),
+('TG/2020/456','TCS1212',46,26,72,'C'),
+('TG/2020/456','ENG1212',57,29,86,'C'),
+('TG/2020/456','TMS1233',37,31,68,'C'),
+('TG/2020/786','ICT1212',39,27.5,66.5,'C'),
+('TG/2020/786','ICT1222',41,35.5,76.5,'C'),
+('TG/2020/786','ICT1253',38,34.5,72.5,'C'),
+('TG/2020/786','ICT1242',29,30.5,59.5,'C'),
+('TG/2020/786','ICT1233',33,25,58,'C'),
+('TG/2020/786','TCS1212',37,22,59,'C'),
+('TG/2020/786','ENG1212',39,25,64,'C'),
+('TG/2020/786','TMS1233',45,24.5,69.5,'C'),
+('TG/2020/789','ICT1212',47,21,68,'C'),
+('TG/2020/789','ICT1222',38,27.5,65.5,'C'),
+('TG/2020/789','ICT1253',34,34,68,'C'),
+('TG/2020/789','ICT1242',29,28.5,57.5,'C'),
+('TG/2020/789','ICT1233',47,25.5,72.5,'C'),
+('TG/2020/789','TCS1212',NULL,NULL,NULL,NULL),
+('TG/2020/789','ENG1212',56,36,92,'C'),
+('TG/2020/789','TMS1233',58,28,86,'C'),
+('TG/2020/345','ICT1212',41,29.5,70.5,'C'),
+('TG/2020/345','ICT1222',47,23,70,'C'),
+('TG/2020/345','ICT1253',27,29,56,'C'),
+('TG/2020/345','ICT1242',37,NULL,NULL,'MC'),
+('TG/2020/345','ICT1233',36,23.5,59.5,'C'),
+('TG/2020/345','TCS1212',49,29,78,'C'),
+('TG/2020/345','ENG1212',52,30.5,82.5,'C'),
+('TG/2020/345','TMS1233',55,25,	80,'C'),
+('TG/2017/871','ICT1212',NULL,NULL,NULL,'WH'),
+('TG/2017/871','ICT1222',NULL,NULL,NULL,'WH'),
+('TG/2017/871','ICT1253',NULL,NULL,NULL,'WH'),
+('TG/2017/871','ICT1242',NULL,NULL,NULL,'WH'),
+('TG/2017/871','ICT1233',NULL,NULL,NULL,'WH'),
+('TG/2017/871','TCS1212',NULL,NULL,NULL,'WH'),
+('TG/2017/871','ENG1212',NULL,NULL,NULL,'WH'),
+('TG/2017/871','TMS1233',NULL,NULL,NULL,'WH'),
+('TG/2018/567','ICT1212',NULL,NULL,NULL,'WH'),
+('TG/2018/567','ICT1222',NULL,NULL,NULL,'WH'),
+('TG/2018/567','ICT1253',NULL,NULL,NULL,'WH'),
+('TG/2018/567','ICT1242',NULL,NULL,NULL,'WH'),
+('TG/2018/567','ICT1233',NULL,NULL,NULL,'WH'),
+('TG/2018/567','TCS1212',NULL,NULL,NULL,'WH'),
+('TG/2018/567','ENG1212',NULL,NULL,NULL,'WH'),
+('TG/2018/567','TMS1233',NULL,NULL,NULL,'WH'),
+('TG/2017/856','ICT1212',NULL,NULL,NULL,'WH'),
+('TG/2017/856','ICT1222',NULL,NULL,NULL,'WH'),
+('TG/2017/856','ICT1253',NULL,NULL,NULL,'WH'),
+('TG/2017/856','ICT1242',NULL,NULL,NULL,'WH'),
+('TG/2017/856','ICT1233',NULL,NULL,NULL,'WH'),
+('TG/2017/856','TCS1212',NULL,NULL,NULL,'WH'),
+('TG/2017/856','ENG1212',NULL,NULL,NULL,'WH'),
+('TG/2017/856','TMS1233',NULL,NULL,NULL,'WH');
+
+
+
+
+
