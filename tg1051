@@ -594,6 +594,18 @@ ALTER TABLE attendance
 ADD FOREIGN KEY (TG_number) REFERENCES student (TG_number),
 ADD FOREIGN KEY (c_code) REFERENCES course (c_code);
 
+CREATE TABLE attendance
+(
+TG_number varchar(15),
+c_code char(8),
+week int,
+theory int,
+practical int,
+status varchar(10),
+total int,
+FOREIGN KEY(TG_number) REFERENCES student(TG_number),
+FOREIGN KEY(c_code) REFERENCES course(c_code)
+);
 
 
 
