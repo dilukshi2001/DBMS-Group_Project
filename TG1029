@@ -476,3 +476,76 @@ VALUES
 ('TG/2021/1176','TMS1233',	11,3,0,	'present',3),
 ('TG/2021/1176','TMS1233',	12,3,0,	'present',3),
 ('TG/2021/1176','TMS1233',	13,3,0,	'present',3);
+
+
+DESC attendance;
+
+SELECT *
+FROM attendance;
+
+------------------------------------
+
+DESC attendance_percentage;
+
+SELECT * 
+FROM attendance_percentage;
+
+------------------------------------
+
+DESC ca;
+
+SELECT *
+FROM ca;
+
+------------------------------------
+
+DESC course;
+
+SELECT * 
+FROM course;
+
+------------------------------------
+
+DESC department;
+
+SELECT * 
+FROM department;
+
+------------------------------------
+
+DESC final_mark;
+
+SELECT * 
+FROM final_mark;
+
+------------------------------------
+
+DESC grade;
+
+SELECT * 
+FROM grade;
+
+-------------------------------------
+
+DESC lecturer;
+
+SELECT *
+FROM lecturer;
+
+--------------------------------------
+
+DESC lecturer_course;
+
+SELECT *
+FROM lecturer_course;
+
+-------------------------------------
+
+DESC lecturer_department;
+
+SELECT * 
+FROM lecturer_department;
+
+---------------------------------------
+
+
