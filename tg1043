@@ -88,7 +88,6 @@ c_credit INT,
 c_type VARCHAR(15),
 status CHAR(1),
 admin_id varchar(10),
-l_id CHAR(6),
 d_id CHAR (3)
 
 );
@@ -96,14 +95,14 @@ d_id CHAR (3)
 
 ​INSERT INTO course
 VALUES
-('ICT1212','DBMS',2,'theory','c','admin01','ICT001','ICT'),
-('ICT1222','DBMS',2,'practical','c','admin01','ICT001','ICT'),
-('ICT1253','Network',3,'both','c','admin01','ICT002','ICT'),
-('ICT1242','Architecture',3,'theory','c','admin01','ICT003','ICT'),
-('ICT1233','Web Development',2,'both','c','admin01','ICT004','ICT'),
-('TCS1212','Management',2,'theory','c','admin01','TCS007','MUL'),
-('ENG1212','English',2,'theory','s','admin01','ENG006','MUL'),
-('TMS1233','Mathamatics',3,'theory','c','admin01','TMS005','MUL');
+('ICT1212','DBMS',2,'theory','c','admin01','ICT'),
+('ICT1222','DBMS',2,'practical','c','admin01','ICT'),
+('ICT1253','Network',3,'both','c','admin01','ICT'),
+('ICT1242','Architecture',3,'theory','c','admin01','ICT'),
+('ICT1233','Web Development',2,'both','c','admin01','ICT'),
+('TCS1212','Management',2,'theory','c','admin01','MUL'),
+('ENG1212','English',2,'theory','s','admin01','MUL'),
+('TMS1233','Mathamatics',3,'theory','c','admin01','MUL');
 
 
 
@@ -399,6 +398,16 @@ CREATE VIEW attendance_percentage AS
 
 
 mysql> select*from attendance_percentage;
+
+ELIGIBILITY
+
+CREATE VIEW eligibility AS
+     SELECT CA.TG_number AS 'tg_num',CA.c_code AS 'course',CA.status AS 'status',attendance_percentage.percentage AS 'percentage', IF((status='pass' OR status='medical')AND(percentage>80),'Eligible','Not-Eligible') AS 'Eligibility'
+     FROM CA,attendance_percentage;
+
+SELECT DISTINCT * FROM eligibility;
+
+
 
 
 
