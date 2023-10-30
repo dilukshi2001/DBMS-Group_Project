@@ -581,6 +581,14 @@ CREATE VIEW ICT12122 AS
      WHERE c_code='ICT1222 '
      GROUP BY TG_number;
 
+ALTER TABLE student
+ADD FOREIGN KEY (d_id) REFERENCES department (d_id);
+
+ALTER TABLE course
+ADD FOREIGN KEY (l_id) REFERENCES lecturer(l_id);
+
+ALTER TABLE course
+ADD FOREIGN KEY (d_id) REFERENCES department (d_id); 
 
 
 
