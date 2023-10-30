@@ -548,4 +548,23 @@ FROM lecturer_department;
 
 ---------------------------------------
 
+DESC student;
 
+SELECT *
+FROM student;
+
+----------------------------------------
+
+DESC student_contact
+
+SELECT *
+FROM student_contact;
+
+-----------------------------------------
+
+DESC user;
+
+SELECT *
+FROM user;
+
+------------------------------------------
