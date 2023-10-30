@@ -590,6 +590,10 @@ ADD FOREIGN KEY (l_id) REFERENCES lecturer(l_id);
 ALTER TABLE course
 ADD FOREIGN KEY (d_id) REFERENCES department (d_id); 
 
+ALTER TABLE attendance
+ADD FOREIGN KEY (TG_number) REFERENCES student (TG_number),
+ADD FOREIGN KEY (c_code) REFERENCES course (c_code);
+
 
 
 
